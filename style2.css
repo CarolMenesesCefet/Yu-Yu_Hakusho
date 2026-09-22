@@ -1139,12 +1139,13 @@ h1{
 	  
   }
   
-  .flipbook{
-	  
-	  height: 250px;
-
-	  font-size:10px;
-  }
+  .flipbook .page small{
+	font-size:8px;
+    margin-bottom: 10px;
+	color:black;
+	text-align: justify;
+	margin: 5%;
+}
 }
 
 
