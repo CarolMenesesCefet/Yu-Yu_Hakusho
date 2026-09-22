@@ -1,0 +1,355 @@
+<html>
+
+
+<head>
+
+<link rel="stylesheet" href="estilo-cd.css"/>
+</head>
+
+
+<body>
+
+	<div class="container-cds">
+	
+		<div class="box">
+			<span style="--i:1;" >
+				<img  src="cd2-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> O tempo</h3>
+					<p> Encerramento 1<p>
+					<p><p>
+				
+				</div>
+				
+				<div class="tiraDisco" id="tiraDisco2" >
+					<img  src="disco.png" class="disco-gira"  id="disco2">
+					
+				</div>
+				
+			</span>
+			<span style="--i:2;">
+				<img  src="cd3-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> Eu vou dizer Adeus</h3>
+					<p> Encerramento 2<p>
+					<p><p>
+				
+				</div>
+				
+				<div class="tiraDisco" id="tiraDisco3" >
+					<img  src="disco.png" class="disco-gira"  id="disco3">
+					
+				</div>			
+				
+			</span>
+			<span style="--i:3;">
+				<img  src="cd4-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> Amor à deriva</h3>
+					<p> Encerramento 3<p>
+					<p><p>
+				
+				</div>
+						
+				<div class="tiraDisco" id="tiraDisco4" >
+					<img  src="disco.png" class="disco-gira"  id="disco4">
+					
+				</div>	
+			
+			</span>
+			<span style="--i:4;">
+				<img  src="cd5-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> A carta</h3>
+					<p> Encerramento 4<p>
+					<p><p>
+				
+				</div>
+				
+				<div class="tiraDisco" id="tiraDisco5" >
+					<img  src="disco.png" class="disco-gira"  id="disco5">
+					
+				</div>	
+				
+			</span>
+			<span style="--i:5;">
+				<img  src="cd6-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> Geração dos Sonhos</h3>
+					<p> Encerramento 5<p>
+					<p><p>
+				
+				</div>
+				
+				<div class="tiraDisco" id="tiraDisco6" >
+					<img  src="disco.png" class="disco-gira"  id="disco6">
+					
+				</div>	
+				
+			</span>
+			<span style="--i:6;">
+				<img  src="cd1-capa.png" class="cover">
+				
+				<div class="info-disco"> 
+					<h3> Sorriso Contagiante</h3>
+					<p> Abertura principal<p>
+					<p><p>
+				
+				</div>
+				
+				<div class="tiraDisco tiraDisco-play" id="tiraDisco1" >
+					<img  src="disco.png" class="disco-gira"  id="disco1">
+					
+				</div>	
+				
+			</span>
+			
+		</div>
+		
+		
+	
+	</div>
+	<div class="btns-audio">
+			
+			<audio id="musica" src="musica1.mp3" preload="auto"></audio>
+			<div class="btn-audio play" >play</div>
+			<div class="btn-audio next">next</div>
+		
+	</div>
+	aaa
+	
+	
+<script>
+
+let angulo = 0;
+
+let cliques = 1;
+
+let next = document.querySelector('.next');
+let play = document.querySelector('.play');
+let box = document.querySelector('.box');
+
+let musica = document.getElementById('musica');
+
+const tiraDisco1 = document.getElementById('tiraDisco1');
+const tiraDisco2 = document.getElementById('tiraDisco2');
+const tiraDisco3 = document.getElementById('tiraDisco3');
+const tiraDisco4 = document.getElementById('tiraDisco4');
+const tiraDisco5 = document.getElementById('tiraDisco5');
+const tiraDisco6 = document.getElementById('tiraDisco6');
+
+const giraDisco1 = document.getElementById('disco1');
+const giraDisco2 = document.getElementById('disco2');
+const giraDisco3 = document.getElementById('disco3');
+const giraDisco4 = document.getElementById('disco4');
+const giraDisco5 = document.getElementById('disco5');
+const giraDisco6 = document.getElementById('disco6');
+
+	next.addEventListener('click',function(){
+	
+		angulo -= 60;
+		box.style.transform = 'perspective(1000px) rotateY(' + angulo + 'deg)';
+		
+		cliques +=1;
+		
+		if (cliques > 6){
+	
+		cliques = 1;
+		}
+		
+		if (cliques == 1){
+		
+			musica.src = "musica1.mp3";
+			tiraDisco1.classList.add('tiraDisco-play');
+			tiraDisco6.classList.remove('tiraDisco-play');
+			
+		} else if (cliques == 2){
+		
+			musica.src = "musica2.mp3";
+			tiraDisco2.classList.add('tiraDisco-play');
+			tiraDisco1.classList.remove('tiraDisco-play');
+		
+		} else if (cliques == 3){
+		
+			musica.src = "musica3.mp3";
+			tiraDisco3.classList.add('tiraDisco-play');
+			tiraDisco2.classList.remove('tiraDisco-play');
+		
+		} else if (cliques == 4){
+		
+			musica.src = "musica4.mp3";
+			tiraDisco4.classList.add('tiraDisco-play');
+			tiraDisco3.classList.remove('tiraDisco-play');
+		
+		
+		} else if (cliques == 5){
+		
+			musica.src = "musica5.mp3";
+			tiraDisco5.classList.add('tiraDisco-play');
+			tiraDisco4.classList.remove('tiraDisco-play');
+		
+		
+		} else if (cliques == 6){
+		
+			musica.src = "musica6.mp3";
+			tiraDisco6.classList.add('tiraDisco-play');
+			tiraDisco5.classList.remove('tiraDisco-play');
+		
+		}
+	
+	})
+	
+	
+
+	play.addEventListener('click',function(){
+	
+		if (musica && !musica.paused) {
+		  
+		  if (cliques == 1){
+				giraDisco1.classList.add('pausado');
+			} else if (cliques == 2){
+				giraDisco2.classList.add('pausado');
+			} else if (cliques == 3){
+				giraDisco3.classList.add('pausado');
+			} else if (cliques == 4){
+				giraDisco4.classList.add('pausado');
+			} else if (cliques == 5){
+				giraDisco5.classList.add('pausado');
+			} else if (cliques == 6){
+				giraDisco6.classList.add('pausado');
+			}
+			musica.pause();
+		  
+		} else{
+		
+			musica.volume = 0.50;
+			
+			if (cliques == 1){
+				giraDisco1.classList.remove('pausado');
+				giraDisco1.classList.add('play');
+			} else if (cliques == 2){
+				giraDisco2.classList.remove('pausado');
+				giraDisco2.classList.add('play');
+			} else if (cliques == 3){
+				giraDisco3.classList.remove('pausado');
+				giraDisco3.classList.add('play');
+			} else if (cliques == 4){
+				giraDisco4.classList.remove('pausado');
+				giraDisco4.classList.add('play');
+			} else if (cliques == 5){
+				giraDisco5.classList.remove('pausado');
+				giraDisco5.classList.add('play');
+			} else if (cliques == 6){
+				giraDisco6.classList.remove('pausado');
+				giraDisco6.classList.add('play');
+			}
+			
+			
+			musica.play();
+		}
+		
+		/////////////////
+		
+		
+	
+	})
+	
+
+
+	
+
+function gira(){
+
+	
+	
+
+}
+
+
+ function girarTras(){
+ 
+	let next = document.querySelector('.next');
+	let play = document.querySelector('.play');
+	let box = document.querySelector('.box');
+	
+	const sorriso = document.getElementById('sorriso');
+	const otempo = document.getElementById('otempo');
+	
+	cliques +=1;
+	
+	if (cliques > 8){
+	
+		cliques = 1;
+	}
+	
+	if (cliques == 1){
+	
+		cliques = 1;
+	}
+	
+	
+	
+	
+ 
+ }
+ 
+function tocaDisco1(){
+
+
+	const sorriso = document.getElementById('sorriso');
+		
+		if (sorriso && !sorriso.paused) {
+		  sorriso.pause();
+		  
+		} else{
+		
+			sorriso.volume = 0.40;
+			 
+			sorriso.play();
+		}
+
+	const discoGira1 = document.getElementById('discoGirando1');
+	
+	discoGira1.classList.add('pausado');
+}
+
+function tocaDisco2(){
+
+	const sorriso = document.getElementById('sorriso');
+	const otempo = document.getElementById('otempo');
+		
+		if (sorriso && !sorriso.paused) {
+		  sorriso.pause();
+		  
+		} else if (otempo && !otempo.paused){
+		
+			otempo.pause();
+			
+			} else{
+		
+				otempo.volume = 0.40;
+			 
+				otempo.play();
+			}
+	
+
+	const discoGira1 = document.getElementById('discoGirando1');
+	
+	
+	
+	discoGira1.classList.add('play');
+}
+ 
+
+
+</script>	
+
+</body>
+
+
+</html>
