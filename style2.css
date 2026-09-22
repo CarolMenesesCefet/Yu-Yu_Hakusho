@@ -16,7 +16,7 @@ html, body {
 body{
 	display: grid;
 	position: relative;
-	min-block-size: 100vh;
+	
 	background-color: black;
 	max-width:100%;
 	color:white;
