@@ -1,0 +1,195 @@
+
+*{
+	box-sizing: border-box;
+	padding:0;
+	
+}
+
+.container-cds{
+
+	position:relative;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background-color: black;
+	transform-style: preserve-3d;
+	
+	width:100%;
+	height:100%;
+	
+}
+.box{
+	
+	position: relative;
+	width:10rem;
+	height:10rem;
+	transform-style: preserve-3d;
+	transition:1.5s;
+	transform: perspective(1000px) rotateY(0deg);
+	
+	background-color:transparent;
+}
+.box span{
+	
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	transform-origin: center;
+	transform-style: preserve-3d;
+	transform: rotateY(calc(var(--i) * 60deg)) translateZ(300px);
+	-webkit-box-reflect: 
+	below 0px linear-gradient(transparent, transparent, black);
+}
+.box span .cover{
+	
+	position:absolute;
+	z-index:2;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	user-select: none;
+}
+
+.info-disco{
+	
+	position:absolute;
+	z-index:1;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:black;
+	color:white;
+	text-align:center;
+}
+
+.cover:hover{
+	
+	
+	opacity:0.3;
+}
+
+.tiraDisco{
+	
+	position:sticky;
+	z-index:0;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	user-select: none;
+	transition: 1s;
+	object-fit:cover;
+	
+}
+
+.tiraDisco-play{
+	
+	animation: sobe 1s ease-in-out forwards;
+		
+}
+
+.tiraDisco-pause{
+	
+	animation: desce 1s ease-in-out forwards;
+		
+}
+
+.disco-gira{
+	
+	object-fit:cover;
+	width:100%;
+	height:100%;
+	
+	
+}
+
+.disco-gira.play{
+	
+	animation:rodarDisco 5s linear infinite;
+}
+
+.disco-gira.pausado {
+  animation-play-state: paused; 
+}
+
+
+
+@keyframes sobe {
+	100% {
+		transform:translateY(-70px);
+	}
+	
+}
+
+@keyframes desce {
+	100% {
+		transform:translateY(100px);
+	}
+	
+}
+
+
+@keyframes rodarDisco {
+	
+  from{
+    transform: rotate(0deg);
+  }
+  
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pararRodarDisco {
+	
+  100%{
+    transform: rotate(0deg);
+  }
+}	
+
+
+
+.btns-audio{
+	
+	position:relative;
+	
+	display: flex;
+	gap: 30px;
+	background-color: transparent;
+	align-items:center;
+	justify-content:center;
+	
+	
+}
+
+.btns-audio .btn-audio{
+	
+	position:relative;
+	width:60px;
+	height:60px;
+	border: 2px solid white;
+	border-radius: 50%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	background-color: white;
+	cursor: pointer;
+		
+}
+
+.btns-audio .btn-audio:active{
+	
+	background-color:gray;
+	
+}
+
+
+
+
+
